@@ -20,7 +20,7 @@ export default function Home() {
           Get Real-Time Insights on Global Events!
         </h2>
       </div>
-      <div className="w-full max-w-md mt-8">
+      <div className="w-full max-w-2xl mt-4">
         <SearchBar />
       </div>
     </main>

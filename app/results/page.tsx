@@ -1,11 +1,52 @@
-import { useSearchParams } from 'next/navigation';
+'use client';
 
-const ResultsPage = async () => {
+import { useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
+
+const ResultsPage = () => {
   const searchParams = useSearchParams();
   const query = searchParams.get('query');
 
-  const res = await fetch(`http://localhost:3000/api/news?query=${query}`);
-  const data = await res.json();
+  const [data, setData] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (!query) {
+        setError('No query provided');
+        setLoading(false);
+        return;
+      }
+
+      try {
+        const res = await fetch(`/api/news?query=${encodeURIComponent(query)}`);
+        if (!res.ok) {
+          throw new Error('Failed to fetch data');
+        }
+        const data = await res.json();
+        setData(data);
+      } catch (err: any) {
+        setError(err.message || 'An unexpected error occurred');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [query]);
+
+  if (loading) {
+    return <div className="p-4">Loading...</div>;
+  }
+
+  if (error) {
+    return <div className="p-4 text-red-500">Error: {error}</div>;
+  }
+
+  if (!data || !data.articles || data.articles.length === 0) {
+    return <div className="p-4">No results found for {`"{query}"`}.</div>;
+  }
 
   return (
     <div className="p-4">
@@ -13,7 +54,7 @@ const ResultsPage = async () => {
       <ul>
         {data.articles.map((article: any, index: number) => (
           <li key={index} className="mb-4">
-            <a href={article.url} target="_blank" className="text-blue-500">
+            <a href={article.url} target="_blank" rel="noopener noreferrer" className="text-blue-500">
               <h3 className="text-xl font-bold">{article.title}</h3>
               <p>{article.description}</p>
             </a>
