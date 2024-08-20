@@ -67,9 +67,11 @@ const ResultsPageContent = () => {
 
 const ResultsPage = () => {
   return (
-    <Suspense fallback={<div className="p-4">Loading...</div>}>
-      <ResultsPageContent />
-    </Suspense>
+    <main className="flex flex-col items-center justify-center min-h-screen bg-zinc-50 dark:bg-zinc-950 relative">
+      <Suspense fallback={<div className="p-4">Loading...</div>}>
+        <ResultsPageContent />
+      </Suspense>
+    </main>
   );
 };
 

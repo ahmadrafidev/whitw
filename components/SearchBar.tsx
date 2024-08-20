@@ -14,7 +14,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="flex flex-row items-center justify-center">
+    <div className="flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 px-4">
       <input
         type="text"
         value={query}
