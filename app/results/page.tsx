@@ -1,9 +1,9 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 
-const ResultsPage = () => {
+const ResultsPageContent = () => {
   const searchParams = useSearchParams();
   const query = searchParams.get('query');
 
@@ -45,12 +45,12 @@ const ResultsPage = () => {
   }
 
   if (!data || !data.articles || data.articles.length === 0) {
-    return <div className="p-4">No results found for {`"{query}"`}.</div>;
+    return <div className="p-4">No results found for {`"${query}"`}.</div>;
   }
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-semibold mb-4">Results for {`"{query}"`}</h2>
+      <h2 className="text-2xl font-semibold mb-4">Results for {`"${query}"`}</h2>
       <ul>
         {data.articles.map((article: any, index: number) => (
           <li key={index} className="mb-4">
@@ -62,6 +62,14 @@ const ResultsPage = () => {
         ))}
       </ul>
     </div>
+  );
+};
+
+const ResultsPage = () => {
+  return (
+    <Suspense fallback={<div className="p-4">Loading...</div>}>
+      <ResultsPageContent />
+    </Suspense>
   );
 };
 
