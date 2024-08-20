@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# WHITW
 
-## Getting Started
+**What's Happening in the World?**
 
-First, run the development server:
+![WHITW](/public/images/whitw-landing-page.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+WHITW is a simple and powerful app that allows users to search for news and information from around the world. WHITW keeps you informed on global events by seamlessly gathering updates from all major news websites, ensuring you never miss a story.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Keyword-Based News Search**: Enter keywords to get the latest news updates from around the world, tailored to your interests.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Real-Time Updates**: Fetch news in real-time with quick API calls, ensuring you always get the most current information.
 
-## Learn More
+- **Global Reach**: Access news stories from all over the world, keeping you informed on both local and international events.
 
-To learn more about Next.js, take a look at the following resources:
+- **Fast and Responsive**: Enjoy a seamless and quick experience with WHITW, designed to keep you informed without any delays or hassle.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Simple Search Interface**: Just type your keywords, and WHITW will do the rest—it's quick and easy to stay informed.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Built with
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [Next.js](https://nextjs.org/) - A React framework for building fast and scalable web applications.
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for crafting responsive and modern UI designs.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
