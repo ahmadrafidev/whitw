@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-
+import { ThemeProvider } from "next-themes";
 import { DM_Sans } from "next/font/google";
 
 import "./globals.css";
@@ -21,7 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={dm_sans.className}>
-      <body>{children}</body>
+      <body>
+        <ThemeProvider attribute="class">
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

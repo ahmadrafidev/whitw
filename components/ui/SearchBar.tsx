@@ -31,7 +31,7 @@ const SearchBar = () => {
       />
       <button
         onClick={handleSearch}
-        className="ml-2 bg-zinc-800 dark:bg-zinc-100 text-white dark:text-black px-4 py-2 rounded-lg border border-zinc-600 dark:border-zinc-300 flex-shrink-0 hover:outline-none hover:ring-2 hover:ring-zinc-800 dark:hover:ring-zinc-200"
+        className="ml-2 bg-zinc-800 dark:bg-zinc-100 text-white dark:text-black px-4 py-2 rounded-lg border border-zinc-600 dark:border-zinc-300 flex-shrink-0 hover:outline-none hover:ring-2 hover:ring-zinc-800 dark:hover:ring-zinc-400"
       >
         Find Out!
       </button>

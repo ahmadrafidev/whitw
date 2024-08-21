@@ -1,9 +1,8 @@
 import Link from 'next/link';
-
 import SearchBar from '@/components/ui/SearchBar';
 import NewButton from '@/components/ui/NewButton';
 import GitHubButton from '@/components/ui/GithubButton';
-
+import DarkModeToggle from '@/components/ui/DarkModeToggle';
 import { FaGlobe, FaBriefcase, FaHeartbeat, FaLaptop } from 'react-icons/fa';
 
 export default function Home() {
@@ -12,7 +11,10 @@ export default function Home() {
 
       <header className="flex justify-between w-full p-3 absolute top-0 left-0 right-0">
         <NewButton />
-        <GitHubButton />
+        <div className="flex space-x-4">
+          <GitHubButton />
+          <DarkModeToggle />
+        </div>
       </header>
 
       <section className="w-full max-w-2xl flex flex-col justify-center items-center -mt-48">
@@ -26,7 +28,7 @@ export default function Home() {
           <SearchBar />
         </div>
       </section>
-      
+
       {/* Cue Keywords Cards */}
       <section className="w-full max-w-2xl mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="flex items-center p-4 bg-zinc-50 dark:bg-zinc-800 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-700">
@@ -39,14 +41,13 @@ export default function Home() {
         </div>
         <div className="flex items-center p-4 bg-white dark:bg-zinc-800 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-700">
           <FaHeartbeat className="text-red-500 text-2xl mr-3" />
-          <span className="text-gray-900 dark:text-gray-301000">Health News</span>
+          <span className="text-gray-900 dark:text-gray-100">Health News</span>
         </div>
         <div className="flex items-center p-4 bg-white dark:bg-zinc-800 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-700">
           <FaLaptop className="text-yellow-500 text-2xl mr-3" />
           <span className="text-gray-900 dark:text-gray-100">Tech Trends</span>
         </div>
       </section>
-
     </main>
   );
 }
