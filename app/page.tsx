@@ -30,20 +30,20 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="w-full max-w-2xl flex flex-col justify-center items-center -mt-48">
+      <section className="w-full max-w-2xl flex flex-col justify-center items-center -mt-32 px-4">
         <div className="flex flex-col items-center text-center">
           <h1 className="text-6xl md:text-7xl font-semibold text-zinc-950 dark:text-zinc-50">WHITW</h1>
           <h2 className="text-lg md:text-xl text-gray-700 dark:text-gray-200 mt-2 tracking-tighter">
             Search for what‘s happening
           </h2>
         </div>
-        <div className="w-full max-w-2xl mt-4">
+        <div className="w-full mt-4">
           <SearchBar query={query} setQuery={setQuery} />
         </div>
       </section>
 
       {/* Cue Keywords Cards */}
-      <section className="w-full max-w-2xl mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <section className="w-full max-w-2xl mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 px-4">
         <div 
           className="flex items-center p-4 bg-zinc-50 dark:bg-zinc-800 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-700 cursor-pointer"
           onClick={() => handleCueClick('Global Politics')}
