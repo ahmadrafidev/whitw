@@ -1,17 +1,21 @@
-'use client'
+'use client';
 
-import { useState } from 'react';
+import { useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 
-const SearchBar = () => {
-  const [query, setQuery] = useState('');
+interface SearchBarProps {
+  query: string;
+  setQuery: (query: string) => void;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ query, setQuery }) => {
   const router = useRouter();
 
-  const handleSearch = () => {
+  const handleSearch = useCallback(() => {
     if (query.trim()) {
       router.push(`/results?query=${query}`);
     }
-  };
+  }, [query, router]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
@@ -24,8 +28,8 @@ const SearchBar = () => {
       <input
         type="text"
         value={query}
-        onKeyDown={handleKeyDown}
         onChange={(e) => setQuery(e.target.value)}
+        onKeyDown={handleKeyDown}
         placeholder="What's happening in the world?"
         className="bg-zinc-100 dark:bg-zinc-700 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-2 w-full max-w-lg focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-700"
       />
