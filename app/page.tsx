@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 import SearchBar from '@/components/ui/SearchBar';
 import NewButton from '@/components/ui/NewButton';
@@ -43,7 +43,7 @@ export default function Home() {
       </section>
 
       {/* Cue Keywords Cards */}
-      <section className="w-full max-w-2xl mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 px-4">
+      <section className="w-full max-w-2xl mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 px-8">
         <div 
           className="flex items-center p-4 bg-zinc-50 dark:bg-zinc-800 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-700 cursor-pointer"
           onClick={() => handleCueClick('Global Politics')}

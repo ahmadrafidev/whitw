@@ -2,7 +2,7 @@
 
 import { useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import { FaArrowRight } from 'react-icons/fa'; 
+import { FaArrowRight } from 'react-icons/fa';
 
 interface SearchBarProps {
   query: string;
