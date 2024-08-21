@@ -15,7 +15,7 @@ export default function Home() {
         <div className="flex flex-col items-center text-center">
           <h1 className="text-6xl md:text-7xl font-semibold text-zinc-950 dark:text-zinc-50">WHITW</h1>
           <h2 className="text-lg md:text-xl text-gray-700 dark:text-gray-200 mt-2 tracking-tighter">
-            Get Real-Time Insights on Global Events!
+            Search for what‘s happening
           </h2>
         </div>
         <div className="w-full max-w-2xl mt-4">
