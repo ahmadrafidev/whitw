@@ -37,7 +37,12 @@ const ResultsPageContent = () => {
   }, [query]);
 
   if (loading) {
-    return <div className="p-4">Loading...</div>;
+    return (
+      <div className="p-4 flex flex-col justify-center items-center">
+        <h1 className="text-2xl font-semibold text-black dark:text-white">Wait a Moment.</h1>
+        <p className="text-xl font-medium text-black dark:text-white">We‘re curating the best news in the world. <strong>Just for you.</strong></p>
+      </div>)
+    ;
   }
 
   if (error) {
