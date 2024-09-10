@@ -1,6 +1,7 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 import { useEffect, useState, Suspense } from 'react';
 
 const ResultsPageContent = () => {
@@ -56,16 +57,17 @@ const ResultsPageContent = () => {
   return (
     <div className="p-4">
       <h2 className="text-2xl font-semibold mb-4">Results for {`"${query}"`}</h2>
-      <ul>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {data.articles.map((article: any, index: number) => (
-          <li key={index} className="mb-4">
-            <a href={article.url} target="_blank" rel="noopener noreferrer" className="text-blue-500">
-              <h3 className="text-xl font-bold">{article.title}</h3>
-              <p>{article.description}</p>
-            </a>
-          </li>
+          <div key={index} className="bg-white dark:bg-zinc-800 rounded-lg shadow-lg p-6">
+            <Link href={article.url} target="_blank" rel="noopener noreferrer" className="block">
+              <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 mb-2">{article.title}</h3>
+              <p className="text-zinc-700 dark:text-zinc-300">{article.description}</p>
+              <span className="text-blue-500 dark:text-blue-400 mt-4 block">Read more</span>
+            </Link>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
